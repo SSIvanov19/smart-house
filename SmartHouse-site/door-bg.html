@@ -1,0 +1,530 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Как да си направим врата? | SmartHouse</title>
+    <link rel="icon" href="images/logo1.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/highlight/zenburn.css" rel="stylesheet">
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <navbar class="navbar navbar-expand-md fixed-top navbar-light font-weight-bold">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo horizontal-logo" src="images/logo1.png" alt="logo">
+                SmartHouse
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Начало</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Как да направим
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="lamp-bg.html">Лампа</a>
+                            <a class="dropdown-item" href="door-bg.html">Врата</a>
+                            <a class="dropdown-item" href="tv-bg.html">Телевизор</a>
+                            <a class="dropdown-item" href="dht22-bg.html">Термометър</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Език
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item" href="door-en.html">English</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="door-bg.html">Български</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Виж още
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item text-center" href="learn-more-bg.html">Прочети още</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-center" href="game-bg.html">Симулация</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+
+    <div class="container">
+        <h1 class="display-4">Врата/Прозорец</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/servo.jpg" data-lightbox="images">
+                            <img src="images/servo.jpg" alt="led">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mx-auto">
+                    <p class="lead">В нашата къща серво мотора отваря и затваря вратите и прозорците.</p>
+                    <p class="lead">В това ръководство ще ви покажем как да направите той да отваря и затваря прозорци и
+                        врати с гласови команди.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Хардуер</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li>1x Ардуино съвместим модул esp8266 </li>
+                            <li>3x Проводника </li>
+                            <li>1x Серво мотор</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Онлайн услуги и софтуер</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li>Arduino IDE</li>
+                            <li>Adafruit</li>
+                            <li>IFTTT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="font-weight-bold">Стъпки:</h3>
+
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 1:</h2>
+                <h4>Първо ще трябва да свържете пиновете на ардуиното към пиновете на Серво мотор, както е показано на
+                    схемата:<br>
+                    • Ардуино GND към Черният проводник на серво мотора <br>
+                    • Ардуино Пин D2 към Жълтия проводник на серво мотора <br>
+                    • Ардуино 3v3 към Червения проводник на серво мотора
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Servo.png" data-lightbox="images">
+                            <img src="images/Servo.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 2:</h2>
+                <h4>Следващата стъпка е да се влезнете в <a href="https://io.adafruit.com/">io.adafruit.com</a> и да
+                    създадете нов feed с името servo.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/ServoFeed.png" data-lightbox="images">
+                            <img src="images/ServoFeed.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 3:</h2>
+                <h4>Ще трябва да създадете и нов Slider Block във вашия dashboard. Дайте му каквото име си искате,
+                    например: Servo.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/ServoSlider.png" data-lightbox="images">
+                            <img src="images/ServoSlider.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 4:</h2>
+                <h4>В Adafruit отиде на AIO key и копирайте вашия Active Key, ще ви трябва по-късно.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AIO_Key.png" data-lightbox="images">
+                            <img src="images/AIO_Key.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 5:</h2>
+                <h4>Отворете нов ардуинo проект с името Servo. Отиде на file -> Preference. В полето „additional Boards
+                    Manager URLs“ въведете:
+                    http://arduino.esp8266.com/stable/package_esp8266com_index.json</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Prefernce.png" data-lightbox="images">
+                            <img src="images/Prefernce.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 6:</h2>
+                <h4>В програмната среда на ардуино отиде на Tools -> Board -> Board Manager. Изберете ESP8266.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Board.png" data-lightbox="images">
+                            <img src="images/Board.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 7:</h2>
+                <h4>В програмната среда на ардуино отиде на Tools -> Manage Libraries. Изберете Adafruit Io Arduino.
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AdafruitIO.png" data-lightbox="images">
+                            <img src="images/AdafruitIO.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 8:</h2>
+                <h4>Отворете File Explore и отворете папката на проекта. В нея създайте header файл с името config.h.
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/LED_File.png" data-lightbox="images">
+                            <img src="images/LED_File.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 9:</h2>
+                <h4>Отвори програмната среда на Arduino. В нея се е появил един нов таб config.h. Отворете го и
+                    поставете следния код:</h4>
+                <pre>
+<code>
+#define IO_USERNAME "твоето_потребителско_име"
+#define IO_KEY      "твоят_ключ"
+
+#define WIFI_SSID "твоят_ssid"
+#define WIFI_PASS "твоята_парола_за_wifi"
+
+#include "AdafruitIO_WiFi.h"
+
+#if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE) || defined(ADAFRUIT_PYPORTAL)
+#if !defined(SPIWIFI_SS) 
+#define SPIWIFI SPI
+#define SPIWIFI_SS 10 
+#define NINA_ACK 9    
+#define NINA_RESETN 6 
+#define NINA_GPIO0 -1 
+#endif
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
+#else
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+#endif
+                </code>
+            </pre>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 10:</h2>
+                <h4>Редактирайте кода като в полето „твоето потребителско име" сложете вашето потребителско име от
+                    adafruit, в „твоят ключ“ поставете ключа, който сте копирали по-рано, в „твоят_ssid“ поставете името
+                    на вашата мрежа, а в полето "твоята_парола_за_wifi" поставете паролата за мрежата.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image h-flex-start">
+                        <a href="images/Define.png" data-lightbox="images">
+                            <img src="images/Define.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 11:</h2>
+                <h4>Отворете раздела Servo и поставете следни код:</h4>
+                <pre>
+<code>
+    // Правим връзка с config.h файла
+    #include "config.h"
+    
+    #include Servo.h>
+    // сложете < на "Servo.h>"
+    // дефинираме дигитален пин D2,
+    // с който да контролираме серво мотора
+    #define SERVO_PIN D2
+    
+    // Дефинираме servo от servo класа
+    Servo servo;
+    
+    // Правим връзка с servo LED
+    AdafruitIO_Feed *servo_feed = io.feed("servo");
+    
+    void setup() {
+    
+      // Започване на серейна комуникация 
+      Serial.begin(115200);
+    
+      // изчакваме да се отвори серийния монитор
+      while(! Serial);
+    
+      // tell the servo class which pin we are using
+      servo.attach(SERVO_PIN);
+    
+      // свърваме се с io.adafruit.com
+      Serial.print("Connecting to Adafruit IO");
+      io.connect();
+    
+      // Настройваме функцията handleMessage,
+      // която ще се извиква всеки път, когато
+      // получим нова информация от adafruit
+      servo_feed->onMessage(handleMessage);
+    
+      // Изчакваме да се свържим с adafruit
+      while(io.status() < AIO_CONNECTED) {
+        Serial.print(".");
+        delay(500);
+      }
+    
+      // Свързани сме
+      Serial.println();
+      Serial.println(io.statusText());
+      servo_feed->get();
+    
+    }
+    
+    void loop() {
+    
+      // io.run() е функция, която трябва
+      // да бъде винаги най-отгоре в loop,
+      // тя отговаря за обмяната на данни
+      // с adafruit
+      io.run();
+    
+    }
+    
+    // Тази функция се извиква всеки път когата,
+    // когата получим информация от adafruit
+    void handleMessage(AdafruitIO_Data *data) {
+    
+      int angle = data->toInt();
+    
+      // застраговаме се, че серво моторя
+      // няма да се отвори на повечеот 
+      // 180 градуса
+      if(angle < 0)
+        angle = 0;
+      else if(angle > 180)
+        angle = 180;
+    
+      servo.write(angle);
+    
+    }
+                               
+</code>
+                    </pre>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 12:</h2>
+                <h4>Отворете <a href="#!">www.ifttt.com</a> и влезнете с вашия имейл. Кликнете върху профилната си
+                    снимка и изберете Create.<br>
+                    Внимание: Имейла трябва да бъде на Gmail и да е един и същи с този, с който сте влезли в Adafruit,
+                    за да може да използвате Google Assistant.
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/IFTT.png" data-lightbox="images">
+                            <img src="images/IFTT.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 13:</h2>
+                <h4>Изберете “This”, потърсете “google assistant” и изберете “Say a simple phrase”. Въвеждате дума, при
+                    която да се активира Google Assistant, примерно „Open the window”. В отговор искате да Ви каже „OK”.
+                    Когато сте готови кликвате върху “Create trigger”.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/openwindow.png" data-lightbox="images">
+                            <img src="images/openwindow.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 14:</h2>
+                <h4>Изберете “That”, потърсете “Adafruit” и изберете “Send data to Adafruit IO”. Избирате „Servo Feed“ и
+                    на „Data to save” пишете “90”. Когато сте готови кликнете върху “Create action” и след това
+                    “Finish”.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image ">
+                        <a href="images/LEDON_action.png" data-lightbox="images">
+                            <img src="images/LEDON_action.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 15:</h2>
+                <h4>Отново кликнете върху профилната си снимка и изберете Create. След това изберете “This”, потърсете
+                    за “google assistant” и изберете “Say a simple phrase”. Въвеждате дума, при която да се активира
+                    Google Assistant, примерно „Close the window”. В отговор искате да Ви каже „OK”. Когато сте готови
+                    кликнете върху “Create trigger”.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/LEDOFF_trigger.png" data-lightbox="images">
+                            <img src="images/LEDOFF_trigger.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 16:</h2>
+                <h4>Изберете “That”, потърсете “Adafruit” и изберете “Send data to Adafruit IO”. Избирате „Servo Feed“ и
+                    на „Data to save” пишете “0”. Като сте готови кликнете върху “Create action” и след това “Finish”.
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/LEDOFF_action.png" data-lightbox="images">
+                            <img src="images/LEDOFF_action.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Стъпка 17:</h2>
+                <h4>Готово сте! Вече имате работещ серво мотор, който работи с гласови команди. Опитайте го</h4>
+                <div class="card mb-4 shadow-sm">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <!-- Content -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ВЪПРОСИ</h5>
+                        <p>Ако имате въпроси, можете да ни пишете по всяко време, ще се радваме да ви отговорим.</p>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <!-- Content -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">БЛАГОДАРЯ</h5>
+                        <p>Бихме искали да благодарим на ПГКПИ, че ни помогнаха да осъществим този проект.</p>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">СЪЗДАТЕЛ</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:SSIvanov19@codingburgas.bg">Стоян Стоянов Иванов</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Контакти</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:smart@codingburgas.bg">smart@codingburgas.bg</a>
+                            </li>
+                            <li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center pt-3">© 2022 SmartHouse
+                <a href="https://smarthouse.codingburgas.org/"> smarthouse.codingburgas.org</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

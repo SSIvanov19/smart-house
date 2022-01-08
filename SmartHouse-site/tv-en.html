@@ -1,0 +1,521 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>How to make a tv? | SmartHouse</title>
+    <link rel = "icon" href = "images/logo1.png" type = "image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/highlight/zenburn.css" rel="stylesheet">
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<navbar class="navbar navbar-expand-md fixed-top navbar-light font-weight-bold">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home-en.html">
+                <img class="logo horizontal-logo" src="images/logo1.png" alt="logo">
+                SmartHouse
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home-en.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        How to do it 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="lamp-en.html">Lamp</a>
+                            <a class="dropdown-item" href="door-en.html">Door</a>
+                            <a class="dropdown-item" href="tv-en.html">Tv</a>
+                            <a class="dropdown-item" href="dht22-en.html">Thermometer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="tv-en.html">English</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="tv-bg.html">Български</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Look more
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item text-center" href="learn-more-en.html">Learn more</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-center" href="game-en.html">Simulation</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+
+    <div class="container">
+        <h1 class="display-4">Tv</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/tv.jpg" data-lightbox="images">
+                            <img src="images/tv.jpg" alt="led">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mx-auto">
+                    <p class="lead">In our house the LCD plays the role of a TV.</p>
+                    <p class="lead">In this tutorial, we'll show you how to turn it on and off with voice commands.</p>
+                </div>
+            </div>
+            <div class="col-md-4">  
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Hardware</h4>
+                    </div>
+                    
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li> 1x Arduino Compatible Esp8266 </li>
+                            <li> 1x Breadboard </li>
+                            <li> 4x Jumper wires </li>
+                            <li> 1x LCD I2C Display </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Software and online services</h4>
+                    </div>
+    
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li>Arduino IDE</li>
+                            <li>Adafruit</li>
+                            <li>IFTTT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        <!-- .modal-profile -->
+        <div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" type="button" data-dismiss="modal">×</button>
+                            <h3 class="modal-title"></h3>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        <!-- //.modal-profile -->
+        
+        <h3 class="font-weight-bold">Steps:</h3>
+
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 1:</h2>
+              <h4>You will first need to connect the Arduino pins to the LCD pins as shown in the diagram:<br>
+                 • Arduino GND to LCD GND<br>
+                 • Arduino Pin D1 to LCD SCL<br>
+                 • Arduino Pin D2 to LCD SDA<br>
+                 • Arduino VIN to LCD VCC</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/TVBoard.png" data-lightbox="images">
+                            <img src="images/TVBoard.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 2:</h2>
+              <h4>The next step is to log in to <a href="https://io.adafruit.com/">io.adafruit.com</a> and create a new feed named LED.</h4>
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body card-image">
+                    <a href="images/LED_Feed.png" data-lightbox="images">
+                        <img src="images/LED_Feed.png" alt="led">
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 3:</h2>
+              <h4>You will also need to create a new Toggle Button in your dashboard. Give it whatever name you want, for example: Tv.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/TVButton.png" data-lightbox="images">
+                            <img src="images/TVButton.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 4:</h2>
+              <h4>In Adafruit go to AIO key and copy your Active Key you will need later.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AIO_Key.png" data-lightbox="images">
+                            <img src="images/AIO_Key.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 5:</h2>
+              <h4>Open a new arduino project named LED. Go to file -> Preference. In the "Additional Boards Manager URLs" box, type:
+                http://arduino.esp8266.com/stable/package_esp8266com_index.json</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Prefernce.png" data-lightbox="images">
+                            <img src="images/Prefernce.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 6:</h2>
+              <h4>In the arduino programming environment went to Tools -> Board -> Board Manager. Select ESP8266.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Board.png" data-lightbox="images">
+                            <img src="images/Board.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 7:</h2>
+              <h4>In the arduino programming environment went to Tools -> Manage Libraries. Select Adafruit Io Arduino.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AdafruitIO.png" data-lightbox="images">
+                            <img src="images/AdafruitIO.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 8:</h2>
+              <h4>Open File Explore and open the project folder. In it, create a header file named config.h.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/LED_File.png" data-lightbox="images">
+                            <img src="images/LED_File.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+              <h2>Step 9:</h2>
+              <h4>Open the Arduino programming environment. A new config.h tab has appeared in it. Open it and paste the code below</h4>
+              <pre>
+                <code>
+                    /*code for step 9*/
+                </code>
+            </pre>
+            </div>
+        </div>
+            <div class="hero1" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 10:</h2>
+                  <h4>Edit the code by typing your adafruit username in the "YOUR USERNAME" box, insert the key you previously copied into "YOUR KEY", insert your network name in "YOUR_SSID", and paste your password in the "YOUR_WID_PASSWORD" for the network.</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image h-flex-start">
+                            <a href="images/Define.png" data-lightbox="images">
+                                <img src="images/Define.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="content" tabindex="-1">
+                <div class="container">
+                    <h2>Step 11:</h2>
+                    <h4>Open the LED tab and paste the code below.</h4>
+                    <pre>
+                        <code>
+#include LiquidCrystal_I2C.h>
+// сложете скоба на "LiquidCrystal_I2C.h>"
+// Правим връзка с config.h файла
+#include "config.h"
+
+int lcdColumns = 16;
+int lcdRows = 2;
+
+LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows); 
+
+// Правим връзка с feed TV
+AdafruitIO_Feed *TV = io.feed("TV");
+
+void setup() {
+
+  // инициализираме LCD дисплея
+  lcd.init();
+  
+  // включваме светлините
+  // на LCD дисплея
+  lcd.backlight();
+  
+  // Започване на серейна комуникация 
+  Serial.begin(115200);
+
+  // изчакваме да се отвори серийния монитор
+  while(! Serial);
+
+  // свърваме се с io.adafruit.com
+  Serial.print("Connecting to Adafruit IO");
+  io.connect();
+
+  // Настройваме функцията handleMessage,
+  // която ще се извиква всеки път, когато
+  // получим нова информация от adafruit
+  TV->onMessage(handleMessage);
+
+  // Изчакваме да се свържим с adafruit
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  // Свързани сме
+  Serial.println();
+  Serial.println(io.statusText());
+  TV->get();
+
+}
+
+void loop() {
+
+  // io.run() е функция, която трябва
+  // да бъде винаги най-отгоре в loop,
+  // тя отговаря за обмяната на данни
+  // с adafruit
+  io.run();
+
+}
+
+// Тази функция се извиква всеки път когата,
+// когата получим информация от adafruit
+void handleMessage(AdafruitIO_Data *data) {
+
+  Serial.print("received <- ");
+
+  if(data->toPinLevel() == HIGH)
+  {
+    Serial.println("HIGH");
+    
+    // Задаваме курсора на първата колона
+    // и на първи ред
+    lcd.setCursor(0, 0);
+    
+    // Извеждаме съобщение
+    lcd.print("Watch now");
+    
+    delay(1000000000000000000000000000000000000000000);
+  }
+  else
+  {
+    Serial.println("LOW");
+    
+    // Задаваме курсора на първата колона
+    // и на първи ред
+    lcd.setCursor(0, 0);
+
+    // Извеждаме съобщение
+    lcd.print("TV is off");
+    
+    delay(1000000000000000000000000000000000000000000);
+  }
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="hero1" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 12:</h2>
+                  <h4>Go to <a href="#!">www.ifttt.com</a> and sign in with your email. Click on your profile photo and select Create
+                    Warning: Email must be the same as the one you used to sign in to Adafruit in order to use Google Assistant.</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image">
+                            <a href="images/IFTT.png" data-lightbox="images">
+                                <img src="images/IFTT.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 13:</h2>
+                  <h4>Select “THIS”, search for “GOOGLE ASSISTANT” and select “SAY A SIMPLE PHRASE”. You enter a word to activate Google Assistant, such as "Turn on the lamp". You want to say "OK" in response. When you are ready you click on "CREATE TRIGGER".</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image">
+                            <a href="images/TVONTrigger.png" data-lightbox="images">
+                                <img src="images/TVONTrigger.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero1" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 14:</h2>
+                  <h4>Select "That", search for "Adafruit" and select "Send data to Adafruit IO". You select "TV Feed" and on "Data to save" you write "ON". When done click on “Create action” and then “Finish”.</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image ">
+                            <a href="images/TVONAction.png" data-lightbox="images">
+                                <img src="images/TVONAction.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 15:</h2>
+                  <h4>Click on your profile picture again and select Create. Then select "This", search for "google assistant" and select "Say a simple phrase". Enter a word to activate Google Assistant, such as "Turn off the TV." You want to say "OK" in response. When done, click on "Create trigger".</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image">
+                            <a href="images/TVOFFTrigger.png" data-lightbox="images">
+                                <img src="images/TVOFFTrigger.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero1" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 16:</h2>
+                  <h4>Select "That", search for "Adafruit" and select "Send data to Adafruit IO". You select "TV Feed" and on "Data to save" you write "OFF". When done click on “Create action” and then “Finish”.</h4>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body card-image">
+                            <a href="images/TVOFF.png" data-lightbox="images">
+                                <img src="images/TVOFF.png" alt="led">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="content" tabindex="-1">
+                <div class="container">
+                  <h2>Step 17:</h2>
+                  <h4>You are ready! You already have a working LCD display that works with voice commands. Try it</h4>
+                    <div class="card mb-4 shadow-sm">
+                    </div>
+                </div>
+            </div>
+
+        <!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-3">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">QUESTIONS</h5>
+          <p>If you have any questions you can write to us anytime, we will be happy to answer you.</p>
+  
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+  
+            <!-- Content -->
+            <h5 class="font-weight-bold text-uppercase mt-3 mb-4">THANKS</h5>
+            <p>We would like to thank the VSCPI for helping us to carry out this project.</p>
+    
+        </div>
+  
+        <div class="col-md-6 col-lg-3">
+  
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">CREATOR</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="mailto:SSIvanov19@codingburgas.bg">Stoyan Stoyanov Ivanov</a>
+            </li>
+          </ul>
+  
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+  
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">CONTACT</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="mailto:smart@codingburgas.bg">smart@codingburgas.bg</a>
+            </li>
+            <li>
+          </ul>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center pt-3">© 2022 SmartHouse
+      <a href="https://smarthouse.codingburgas.org/"> smarthouse.codingburgas.org</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+    </div>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

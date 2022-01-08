@@ -1,0 +1,665 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	background: #ffffff;
+	font-size:22px;
+	line-height: 32px;
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}	
+
+h3 {
+	font-size: 30px;
+	line-height: 34px;
+	text-align: center;
+	color: #000000;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align:center;
+	font-size:60px;
+	line-height: 70px;
+	font-family: 'Bree Serif', 'serif';
+	}
+
+#container {
+	margin: 0 auto;
+	max-width: 890px;
+}
+
+p {
+	text-align: center;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #318d69;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	font-size:20px;
+	line-height: 60px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #318d69;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #4CD9A3; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #4CD9A3; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #31A357;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #318d69;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #31A357; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #2E8799;
+  font-size: 55px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  width: 99%;
+  padding-left: 0;
+  overflow: auto;
+  border: 3px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 8px solid #ccc;
+  border-top: none;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+#myImg {
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+  }
+  
+  #myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+	from {transform: scale(0.1)} 
+	to {transform: scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	.modal-content {
+	  width: 100%;
+	}
+  }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+table, th, td {
+  padding-right: 38%;
+  /*margin-top:30px;*/
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.container {
+	margin-top:30px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+	font-family: 'Source Sans Pro';
+	font-weight:700;
+  }
+  
+  .fancyTab {
+	  text-align: center;
+	padding:15px 0;
+	background-color: #eee;
+	  box-shadow: 0 0 0 1px #ddd;
+	  top:15px;	
+	transition: top .2s;
+  }
+  
+  .fancyTab.active {
+	top:0;
+	transition:top .2s;
+  }
+  
+  .whiteBlock {
+	display:none;
+  }
+  
+  .fancyTab.active .whiteBlock {
+	display:block;
+	height:2px;
+	bottom:-2px;
+	background-color:#fff;
+	width:99%;
+	position:absolute;
+	z-index:1;
+  }
+  
+  .fancyTab a {
+	  font-family: 'Source Sans Pro';
+	  font-size:1.65em;
+	  font-weight:300;
+	transition:.2s;
+	color:#333;
+  }
+  
+  /*.fancyTab .hidden-xs {
+	white-space:nowrap;
+  }*/
+  
+  .fancyTabs {
+	  border-bottom:2px solid #ddd;
+	margin: 15px 0 0;
+  }
+  
+  li.fancyTab a {
+	padding-top: 15px;
+	top:-15px;
+	padding-bottom:0;
+  }
+  
+  li.fancyTab.active a {
+	padding-top: inherit;
+  }
+  
+  .fancyTab .fa {
+	font-size: 40px;
+	  width:100%;
+	  padding: 15px 0 5px;
+	color:#666;
+  }
+  
+  .fancyTab.active .fa {
+	color: #cfb87c;
+  }
+  
+  .fancyTab a:focus {
+	  outline:none;
+  }
+  
+  .fancyTabContent {
+	border-color: transparent;
+	box-shadow: 0 -2px 0 -1px #fff, 0 0 0 1px #ddd;
+	padding: 30px 15px 15px;
+	position:relative;
+	background-color:#fff;
+  }
+  
+  .nav-tabs > li.fancyTab.active > a, 
+  .nav-tabs > li.fancyTab.active > a:focus,
+  .nav-tabs > li.fancyTab.active > a:hover {
+	  border-width:0;
+  }
+  
+  .nav-tabs > li.fancyTab:hover {
+	  background-color:#f9f9f9;
+	  box-shadow: 0 0 0 1px #ddd;
+  }
+  
+  .nav-tabs > li.fancyTab.active:hover {
+	background-color:#fff;
+	box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+  }
+  
+  .nav-tabs > li.fancyTab:hover a {
+	  border-color:transparent;
+  }
+  
+  .nav.nav-tabs .fancyTab a[data-toggle="tab"] {
+	background-color:transparent;
+	border-bottom:0;
+  }
+  
+  .nav-tabs > li.fancyTab:hover a {
+	border-right: 1px solid transparent;
+  }
+  
+  .nav-tabs > li.fancyTab > a {
+	  margin-right:0;
+	  border-top:0;
+	padding-bottom: 30px;
+	margin-bottom: -30px;
+  }
+  
+  .nav-tabs > li.fancyTab {
+	  margin-right:0;
+	  margin-bottom:0;
+  }
+  
+  .nav-tabs > li.fancyTab:last-child a {
+	border-right: 1px solid transparent;
+  }
+  
+  .nav-tabs > li.fancyTab.active:last-child {
+	border-right: 0px solid #ddd;
+	  box-shadow: 0px 2px 0 0px #fff, 0px 0px 0 1px #ddd;
+  }
+  
+  .fancyTab:last-child {
+	box-shadow: 0 0 0 1px #ddd;
+  }
+  
+  .tabs .nav-tabs li.fancyTab.active a {
+	  box-shadow:none;
+	top:0;
+  }
+  
+  
+  .fancyTab.active {
+	background: #fff;
+	  box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+	padding-bottom:30px;
+  }
+  
+  .arrow-down {
+	  display:none;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 22px solid #ddd;
+	position: absolute;
+	top: -1px;
+	left: calc(50% - 20px);
+  }
+  
+  .arrow-down-inner {
+	width: 0;
+	height: 0;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+	border-top: 12px solid #fff;
+	position: absolute;
+	top: -22px;
+	left: -18px;
+  }
+  
+  .fancyTab.active .arrow-down {
+	display: block;
+  }
+  
+  @media (max-width: 1200px) {
+	
+	.fancyTab .fa {
+		font-size: 36px;
+	}
+	
+	.fancyTab .hidden-xs {
+	  font-size:22px;
+	  }
+		  
+  }
+	  
+	  
+  @media (max-width: 992px) {
+	  
+	.fancyTab .fa {
+		font-size: 33px;
+	}
+	  
+	.fancyTab .hidden-xs {
+		font-size:18px;
+	  font-weight:normal;
+	}
+		  
+  }
+	  
+	  
+  @media (max-width: 768px) {
+	  
+	.fancyTab > a {
+	  font-size:18px;
+	}
+	  
+	.nav > li.fancyTab > a {
+	  padding:15px 0;
+	  margin-bottom:inherit;
+	}
+	  
+	.fancyTab .fa {
+	  font-size:30px;
+	}
+	  
+	.nav-tabs > li.fancyTab > a {
+	  border-right:1px solid transparent;
+	  padding-bottom:0;
+	}
+	  
+	.fancyTab.active .fa {
+	  color: #333;
+	  }
+		  
+  }
+
+
+  .flex-container {
+	display: flex;
+	justify-content: stretch;
+  }
+  
+  .flex-container > div {
+	margin: 10px;
+	text-align: center;
+	line-height: 10px;
+	font-size: 30px;
+  }
+  .Color {
+	text-decoration: none;
+	font-size: 20px;
+	width: 100px;
+	color: #008CBA;
+  }

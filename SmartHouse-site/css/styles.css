@@ -1,0 +1,199 @@
+* {
+    word-break: break-word;
+}
+
+body {
+    padding-top: 66px;
+    padding-bottom: 1rem;
+    color: #5a5a5a;
+}
+
+.card-deck .card {
+    min-width: 220px;
+}
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card img {
+    max-width: 100%;
+    width: 100%;
+}
+pre {
+    max-height: 80vh;
+}
+code {
+    margin: -1.3rem 0 0;
+}
+
+/* lightbox */
+.lb-closeContainer {
+    /*display: none;*/
+}
+.lb-data .lb-number {
+    font-size: 1rem;
+}
+
+.navbar-light {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 1px 1px 2px rgba(0,0,0,.25);
+}
+
+
+
+.back-to-top {
+    display: block;
+    padding: 1rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background: rgba(0,0,0,.6);
+    border-radius: 50%;
+    transition: all .2s ease;
+    opacity: 0;
+}
+.back-to-top.show {
+    opacity: 1;
+}
+.back-to-top:hover {
+    background: rgba(0,0,0,1);
+}
+.back-to-top svg {
+    transform: rotate(90deg);
+}
+.marketing {
+    padding-top: 5rem;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    padding-top: 20px;
+}
+.hero {
+    color:#f2f2f2;
+    background: #6E6E6E;
+    padding: 1rem;
+  }
+.hero1 {
+    color:#6E6E6E;
+    background : #E4E4E4;
+    padding :1rem;
+}
+
+.h-flex-start {
+    justify-content: flex-start;
+}
+
+.v-flex-start {
+    align-content: flex-start;
+}
+
+/* carousel */
+.carousel-item {
+    background-size: cover;
+    background-position: center center;
+    background-color: #777;
+}
+
+.carousel-item1 {
+    background-image: url(../images/firsthome.png);
+}
+.carousel-item2 {
+    background-image: url(../images/secondhome.jpg);
+}
+.carousel-item3 {
+    background-image: url(../images/thirdhome.jpg);
+}
+
+.btn-outline {
+    border-width: 3px;
+    font-weight: 600;
+    border-radius: .5rem;
+    min-width: 10rem;
+}
+.btn-outline svg {
+    transition: fill .15s ease-in-out;
+}
+.btn-outline:hover svg {
+    fill: #212529;
+}
+
+.arrow-down {
+    transform: rotate(-90deg);
+}
+
+/* bootstrap */
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: rgb(0, 173, 173);
+}
+.navbar-brand {
+    font-size: 1.6rem;
+    display: inline-flex;
+    align-items: flex-end;
+}
+.navbar-brand img {
+    margin-right: .5rem;
+}
+
+.section-image {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #777;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 6px rgba(77,77,77,.5);
+    margin-bottom: 2rem;
+}
+.img-inline {
+    width: 100%;
+    box-shadow: 0 0 6px rgba(77,77,77,.5);
+}
+
+.section-image1 {
+    background-image: url(../images/section1.jpg);
+}
+.section-image2 {
+    background-image: url(../images/section2.png);
+}
+.section-image3 {
+    background-image: url(../images/section3_1.jpg);
+}
+.forthhome-image {
+    background-image: url(../images/forthhome.jpg);
+}
+.game {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    border: 0;
+}
+.row-game {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 5%;
+}
+.padding-top {
+    margin-top: 2%;
+}
+.dropdown-menu{
+    right: 0;
+    left: auto;
+}

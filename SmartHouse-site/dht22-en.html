@@ -1,0 +1,468 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>How to make a online thermometer? | SmartHouse</title>
+    <link rel="icon" href="images/logo1.png" type="image/png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/highlight/zenburn.css" rel="stylesheet">
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <navbar class="navbar navbar-expand-md fixed-top navbar-light font-weight-bold">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home-en.html">
+                <img class="logo horizontal-logo" src="images/logo1.png" alt="logo">
+                SmartHouse
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home-en.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            How to do it
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="lamp-en.html">Lamp</a>
+                            <a class="dropdown-item" href="door-en.html">Door</a>
+                            <a class="dropdown-item" href="tv-en.html">Tv</a>
+                            <a class="dropdown-item" href="dht22-en.html">Thermometer</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Language
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item" href="dht22-en.html">English</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="dht22-bg.html">Български</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Look more
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item text-center" href="learn-more-en.html">Learn more</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-center" href="game-en.html">Simulation</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+
+    <div class="container">
+        <h1 class="display-4">Thermometer</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/DHT22.png" data-lightbox="images">
+                            <img src="images/DHT22.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mx-auto">
+                    <p class="lead">In this guide we will show you how to build an online thermometer yourself.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Hardware</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li>1x Arduino compatible esp8266 module</li>
+                            <li>1x Breadboard</li>
+                            <li>4x Jumper wires</li>
+                            <li>1x DHT22 Sensor</li>
+                            <li>1x 10kΩ resistor</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Software and online services</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-unstyled my-0">
+                            <li>Arduino IDE</li>
+                            <li>Adafruit</li>
+                            <li>IFTTT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- .modal-profile -->
+        <div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" type="button" data-dismiss="modal">×</button>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //.modal-profile -->
+
+        <h3 class="font-weight-bold">Steps:</h3>
+
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 1:</h2>
+                <h4>You will first need to connect the arduino pins to the pins of the DHT22 sensor and resistor as
+                    shown in the diagram:<br>
+                      • Arduino 3V to pin 1 on DHT22<br>
+                      • Arduino 3V to one leg of a 10kΩ resistor and the other leg of the resistor to pin 2 of DHT22<br>
+                      • Arduino Pin D1 to pin 2 of DHT22<br>
+                      • Arduino GND to pin 4 of DHT22
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/DHT22Board.png" data-lightbox="images">
+                            <img src="images/DHT22Board.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 2:</h2>
+                <h4>The next step is to go to <a href="#!"> io.adafruit.com </a> and create two new feeds named
+                    Temperature and Humidity.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/TEMP.png" data-lightbox="images">
+                            <img src="images/TEMP.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 3:</h2>
+                <h4>You will also need to create a new Line Chart Block in your dashboard. Give it whatever name you
+                    want, for example: DHT22.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/CHART.png" data-lightbox="images">
+                            <img src="images/CHART.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 4:</h2>
+                <h4>In Adafruit go to AIO key and copy your Active Key you will need later.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AIO_Key.png" data-lightbox="images">
+                            <img src="images/AIO_Key.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 5:</h2>
+                <h4>Open a new arduino project named DHT22. Go to file -> Preference. In the "Additional Boards Manager
+                    URLs" box, type:
+                      http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+                </h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Prefernce.png" data-lightbox="images">
+                            <img src="images/Prefernce.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 6:</h2>
+                <h4>In the arduino programming environment went to Tools -> Board -> Board Manager. Select ESP8266.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/Board.png" data-lightbox="images">
+                            <img src="images/Board.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 7:</h2>
+                <h4>In the arduino programming environment went to Tools -> Manage Libraries. Select Adafruit Io
+                    Arduino, Adafruit Unified Sensor and DHT Sensor Library.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/AdafruitIO.png" data-lightbox="images">
+                            <img src="images/AdafruitIO.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 8:</h2>
+                <h4>Open File Explore and open the project folder. In it, create a header file named config.h.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image">
+                        <a href="images/LED_File.png" data-lightbox="images">
+                            <img src="images/LED_File.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 9:</h2>
+                <h4>Open the Arduino programming environment. A new config.h tab has appeared in it. Open it and paste
+                    the following code:</h4>
+                <pre>
+                  <code>
+#define IO_USERNAME "твоето_потребителско_име"
+#define IO_KEY      "твоят_ключ"
+
+#define WIFI_SSID "твоят_ssid"
+#define WIFI_PASS "твоята_парола_за_wifi"
+
+#include "AdafruitIO_WiFi.h"
+
+#if defined(USE_AIRLIFT) || defined(ADAFRUIT_METRO_M4_AIRLIFT_LITE) || defined(ADAFRUIT_PYPORTAL)
+#if !defined(SPIWIFI_SS) 
+#define SPIWIFI SPI
+#define SPIWIFI_SS 10 
+#define NINA_ACK 9    
+#define NINA_RESETN 6 
+#define NINA_GPIO0 -1 
+#endif
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS, SPIWIFI_SS, NINA_ACK, NINA_RESETN, NINA_GPIO0, &SPIWIFI);
+#else
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+#endif
+            </code>
+            </pre>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 10:</h2>
+                <h4>Edit the code by typing your adafruit username in the "your username" box, insert the key you
+                    previously copied into "your key", insert your network name in "your_ssid", and paste your password
+                    in the "your_wid_password" for the network.</h4>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body card-image h-flex-start">
+                        <a href="images/Define.png" data-lightbox="images">
+                            <img src="images/Define.png" alt="led">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 11:</h2>
+                <h4>Open the DHT22 tab and paste the following code:</h4>
+                <pre>
+                    <code>
+// създайте DHT22 инстанция
+DHT_Unified dht(DATA_PIN, DHT22);
+
+// Правим връзка с feed temperature и humidity
+AdafruitIO_Feed *temperature = io.feed("temperature");
+AdafruitIO_Feed *humidity = io.feed("humidity");
+
+void setup() {
+
+  // Започване на серейна комуникация 
+  Serial.begin(115200);
+
+  // изчакваме да се отвори серийния монитор
+  while(! Serial);
+
+  // инициализираме DHT22 сензора
+  dht.begin();
+
+  // свърваме се с io.adafruit.com
+  Serial.print("Connecting to Adafruit IO");
+  io.connect();
+
+
+  // Изчакваме да се свържим с adafruit
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  // Свързани сме
+  Serial.println();
+  Serial.println(io.statusText());
+
+}
+
+void loop() {
+
+  // io.run() е функция, която трябва
+  // да бъде винаги най-отгоре в loop,
+  // тя отговаря за обмяната на данни
+  // с adafruit
+  io.run();
+
+  sensors_event_t event;
+  dht.temperature().getEvent(&event);
+
+  float celsius = event.temperature;
+
+  Serial.print("celsius: ");
+  Serial.print(celsius);
+  Serial.println("C");
+
+  // изпрщаме celsius към adafruit
+  temperature->save(celsius);
+
+  dht.humidity().getEvent(&event);
+
+  Serial.print("humidity: ");
+  Serial.print(event.relative_humidity);
+  Serial.println("%");
+
+  // изпрщаме humidity към adafruit
+  humidity->save(event.relative_humidity);
+
+  // изчакваме 5 секунди (5000 милисекунди == 5 секънди)
+  delay(5000);
+
+}
+                    </code>
+                    </pre>
+            </div>
+        </div>
+        <div class="hero1" id="content" tabindex="-1">
+            <div class="container">
+                <h2>Step 12:</h2>
+                <h4>You are ready! You already have a working online thermometer. Try it.</h4>
+                <div class="card mb-4 shadow-sm">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <!-- Content -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">QUESTIONS</h5>
+                        <p>If you have any questions you can write to us anytime, we will be happy to answer you.</p>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <!-- Content -->
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">THANKS</h5>
+                        <p>We would like to thank the VSCPI for helping us to carry out this project.</p>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">CREATOR</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:SSIvanov19@codingburgas.bg">Stoyan Stoyanov Ivanov</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">CONTACT</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="mailto:smart@codingburgas.bg">smart@codingburgas.bg</a>
+                            </li>
+                            <li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center pt-3">© 2022 SmartHouse
+                <a href="https://smarthouse.codingburgas.org/"> smarthouse.codingburgas.org</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
