@@ -31,35 +31,47 @@
 <img src  = "https://cdn.discordapp.com/attachments/820665281453490187/929425482204725268/unknown.png" alt="demo img 2" style="width: 40em">
 <img src  = "https://media.discordapp.net/attachments/820665281453490187/929425654116679700/unknown.png" alt="demo img 3"  style="width: 40em">
 <img src  = "https://cdn.discordapp.com/attachments/820665281453490187/929426153763115128/unknown.png" alt="demo img 4"  style="width: 40em">
-<!--
-TBD
 <h1>⌨️ How it works</h1>
-<p><strong>Our work can be split on 2 main things :</p></strong>
+<p><strong>The project can be split in 3 main things :</p></strong>
 <ol>
-  <li>👨‍💻 Back end : 
+  <li>🌐 Website: 
     <ul>
-      <li>The back-end is our logic layer.</li>
-      <li>It creates the mazes and rooms based on algorithms.</li>
+      <li>The website is the place where users can learn more about the project.</li>
+      <li>It can also show them how to make their own smart house.</li>
+      <li>Moreover, users can play the demo of the simulation directly on the website without having to download it. </li>
     </ul>
   </li>
-  <li> Front end :  
+  <li>👨‍💻 Simulations:  
     <ul>
-      <li>The front-end is our presentation layer.</li>
-      <li>It controls what the used is experiencing with the program.</li>
+      <li>You can download the simulations from the website.</li>
+      <ul>
+        <li>Simulation</li>
+        <ul>
+          <li>In the simulation you can explore both a smart house and a smart city.</li>
+          <li>You can monitor your house, city traffic or even talk to AI.</li>
+          <li>To see more about how to play, see the <a href="">wiki</a>.</li>
+        </ul>
+        <li>VR simulation</li>
+        <ul>
+          <li>In the VR simulation, you can explore the city and the house, but in VR!</li>
+          <li>You can even talk to AI with your voice!</li>
+          <li>To see more about how to play, see the <a href="">wiki</a>.</li>
+        </ul>
+      </ul>
     </ul>
   </li>
-  <li> <p>Here you can see how these two parts combines and create our project:</p>
+  <li>🏠 Model of a smart house : 
     <ul>
-      <li> <img src  = "https://raw.githubusercontent.com/SSIvanov19/maze-game-2021/master/img/img3.jpg" alt="demo img 3"> </li>
+      <li>The model has several Arduino-compatible ESP 8266 modules. They are connected to the online service Adafruit, which receives and sends information to them. This information also communicates with Google Assistant.</li>
+      <li>The elements we work with are transformed into objects from one house, such as the LED plays the role of a normal light bulb in the house.</li>
+      <li>All components are connected to wi-fi at home or to mobile internet</li>
     </ul>
   </li>
 </ol>
-<h1>🖱️ Usage </h1>
-  <p> You can move with WASD or with the arrow keys on the keyboard. </p>
-  <img src="https://raw.githubusercontent.com/SSIvanov19/maze-game-2021/master/img/controls.png?token=APGEKWGHEH7JFB3NLWTILY3BSJCEK" alt="control" width = 130px> 
-  <p> You interact with objects, just by bumping into them. </p>
-  <p> To flick trough the dialogue you need to press any button. </p>
+<h1><a href="">🖱️ Usage <a/></h1>
 <h1> 📥 Installing </h1>
-<p> To install the project on your machine you just need to clone it. This can be done by : </p>
+<p> If you want to download one of the simulations you can do it from <a href="https://github.com/SSIvanov19/smart-house/releases">release tab</a>.</p>
+<p> To install the source code of the project on your machine you just need to clone it. This can be done by : </p>
 <pre>git clone https://github.com/SSIvanov19/maze-game-2021.git</pre>
-<p> You can open the project by opening the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/512px-Visual_Studio_Icon_2019.svg.png" height="18px" alt="vs logo"><strong> maze-game-2021.sln </strong> file </p>
+<p><strong> Don't forget that you need to have <a href="https://git-lfs.github.com/">GitLFS</a>.</strong></p>
+<p> To see more information about installing the project, see the <a href="">wiki tab</a>.</p>
