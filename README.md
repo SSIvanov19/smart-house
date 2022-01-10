@@ -31,6 +31,7 @@
 <img src  = "https://cdn.discordapp.com/attachments/820665281453490187/929425482204725268/unknown.png" alt="demo img 2" style="width: 40em">
 <img src  = "https://media.discordapp.net/attachments/820665281453490187/929425654116679700/unknown.png" alt="demo img 3"  style="width: 40em">
 <img src  = "https://cdn.discordapp.com/attachments/820665281453490187/929426153763115128/unknown.png" alt="demo img 4"  style="width: 40em">
+<!--
 TBD
 <h1>⌨️ How it works</h1>
 <p><strong>Our work can be split on 2 main things :</p></strong>
