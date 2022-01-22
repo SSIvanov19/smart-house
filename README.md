@@ -49,13 +49,13 @@
         <ul>
           <li>In the simulation you can explore both a smart house and a smart city.</li>
           <li>You can monitor your house, city traffic or even talk to AI.</li>
-          <li>To see more about how to play, see the <a href="">wiki</a>.</li>
+          <li>To see more about how to play, see the <a href="https://github.com/SSIvanov19/smart-house/wiki/How-to-play#how-to-play-the-simulation">wiki</a>.</li>
         </ul>
         <li>VR simulation</li>
         <ul>
           <li>In the VR simulation, you can explore the city and the house, but in VR!</li>
           <li>You can even talk to AI with your voice!</li>
-          <li>To see more about how to play, see the <a href="">wiki</a>.</li>
+          <li>To see more about how to play, see the <a href="https://github.com/SSIvanov19/smart-house/wiki/How-to-play#how-to-play-the-vr-simulation">wiki</a>.</li>
         </ul>
       </ul>
     </ul>
@@ -68,10 +68,10 @@
     </ul>
   </li>
 </ol>
-<h1><a href="">🖱️ Usage <a/></h1>
+<h1><a href="https://github.com/SSIvanov19/smart-house/wiki/How-to-play">🖱️ How to play <a/></h1>
 <h1> 📥 Installing </h1>
 <p> If you want to download one of the simulations you can do it from <a href="https://github.com/SSIvanov19/smart-house/releases">release tab</a>.</p>
 <p> To install the source code of the project on your machine you just need to clone it. This can be done by : </p>
-<pre>git clone https://github.com/SSIvanov19/maze-game-2021.git</pre>
+<pre>git clone https://github.com/SSIvanov19/smart-house.git</pre>
 <p><strong> Don't forget that you need to have <a href="https://git-lfs.github.com/">GitLFS</a>.</strong></p>
-<p> To see more information about installing the project, see the <a href="">wiki tab</a>.</p>
+<p> To see more information about installing the project, see the <a href="https://github.com/SSIvanov19/smart-house/wiki/Installation">wiki tab</a>.</p>
